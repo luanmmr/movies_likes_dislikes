@@ -1,0 +1,10 @@
+---
+pt-BR:
+  movies:
+    index:
+      title: "Filmes"
+      title_movie: "Filme"
+      title_chapter: "Episódio"
+      title_director: "Diretor"
+      title_year: "Ano"
+      

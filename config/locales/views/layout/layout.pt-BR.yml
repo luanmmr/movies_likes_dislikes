@@ -1,0 +1,8 @@
+---
+pt-BR:
+  layouts:
+    layout:
+      exit: "Sair"
+      topbar_title: "Lista de Filmes"
+      movies: "Filmes"
+      report: "Relatório"

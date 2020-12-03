@@ -1,0 +1,35 @@
+<main class="ls-main ">
+    <div class="container-fluid">
+      <h1 class="ls-title-intro ls-ico-book"><%= t('.title') %></h1>
+
+      <table class="ls-table ls-bg-header">
+        <thead>
+          <tr>
+            <th><%= t('.title_movie') %></th>
+            <th class="hidden-xs"><%= t('.title_chapter') %></th>
+            <th><%= t('.title_director') %></th>
+            <th class="hidden-xs"><%= t('.title_year') %></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @movies[:results].each do |movie| %>
+            <tr>
+              <td><a href="" title=""><%= movie[:title] %></a></td>
+              <td class="hidden-xs"><%= movie[:episode_id] %></td>
+              <td><%= movie[:director] %></td>
+              <td class="hidden-xs"><%= movie[:release_date] %></td>
+              <td>
+                <%= link_to '', root_path, class: 'ls-ico-thumbs-up' %>
+              </td>
+              <td class="hidden-xs">
+                <%= link_to '', root_path, class: 'ls-ico-thumbs-up2' %>
+              </td>      
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+    </div>
+</main>
