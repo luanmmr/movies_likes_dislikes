@@ -22,9 +22,7 @@
     <% end %>
 
     <% unless user_signed_in? %>
-      <%= alert %>
-      <%= notice %>
-      <%= yield %>
+      <%= render 'layouts/sign' %>
     <% end %>
 
     <%= render 'layouts/footer' %>

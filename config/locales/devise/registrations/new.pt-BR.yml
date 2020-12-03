@@ -1,0 +1,12 @@
+---
+pt-BR:
+  devise:
+    registrations:
+      new:
+        sign_up_title: "Criar Conta"
+        remember_me: "Lembrar-me"
+        log_in: "Entrar"
+        password: "Senha"
+        minimum_char: "Mínimo de Caracteres"
+        password_confirmation: "Confirmação de Senha"
+        sign_up: "Criar"

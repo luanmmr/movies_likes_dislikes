@@ -1,0 +1,8 @@
+---
+pt-BR:
+  devise:
+    sessions:
+      new:
+        title: "Login"
+        remember_me: "Lembrar-me"
+        log_in: "Entrar"

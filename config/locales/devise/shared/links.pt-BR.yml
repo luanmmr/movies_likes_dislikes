@@ -1,0 +1,8 @@
+---
+pt-BR:
+  devise:
+    shared:
+      links:
+        sign_up: "Criar Conta"
+        forgot_pass: "Esqueceu senha?"
+        log_in: "Entrar"
