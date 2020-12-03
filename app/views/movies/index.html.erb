@@ -17,21 +17,31 @@
           </tr>
         </thead>
         <tbody>
-          <% @movies[:results].each do |movie| %>
+          <% @movies[:results].each_index do |indice| %>
             <tr>
-              <td><a href="" title=""><%= movie[:title] %></a></td>
-              <td class="hidden-xs"><%= movie[:episode_id] %></td>
-              <td><%= movie[:director] %></td>
-              <td class="hidden-xs"><%= movie[:release_date] %></td>
               <td>
-                <%= link_to '', likes_path(episode_id: movie[:episode_id], 
-                                           user_id: current_user.id), method: :post, 
-                                           class: 'ls-ico-thumbs-up' %>
+                <%= @movies[:results][indice][:title] %>
               </td>
               <td class="hidden-xs">
-                <%= link_to '', dislikes_path(episode_id: movie[:episode_id], 
-                                              user_id: current_user.id), method: :post, 
-                                              class: 'ls-ico-thumbs-up2' %>
+                <%= @movies[:results][indice][:episode_id] %>
+              </td>
+              <td>
+                <%= @movies[:results][indice][:director] %>
+              </td>
+              <td class="hidden-xs">
+                <%= @movies[:results][indice][:release_date] %>
+              </td>
+              <td id=<%= "movie-like-#{indice}" %>>
+                <%= link_to 'Like', 
+                            likes_path(episode_id: @movies[:results][indice][:episode_id], 
+                                       user_id: current_user.id), 
+                            method: :post, class: 'ls-ico-thumbs-up' %>
+              </td>
+              <td class="hidden-xs" id=<%= "movie-dislike-#{indice}" %>>
+                <%= link_to 'Dislike', 
+                            dislikes_path(episode_id: @movies[:results][indice][:episode_id], 
+                                          user_id: current_user.id), 
+                            method: :post, class: 'ls-ico-thumbs-up2' %>
               </td>      
             </tr>
           <% end %>
