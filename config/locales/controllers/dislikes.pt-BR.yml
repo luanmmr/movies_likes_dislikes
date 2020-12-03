@@ -1,0 +1,7 @@
+---
+pt-BR:
+  dislikes:
+    create:
+      maximum_dislikes: "Máximo de dislikes atingido"
+      repeated_movie: "Você já deu dislike para este filme"
+      success: "Dislike registrado"

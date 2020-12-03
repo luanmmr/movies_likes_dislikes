@@ -7,4 +7,6 @@ pt-BR:
       title_chapter: "Episódio"
       title_director: "Diretor"
       title_year: "Ano"
+      msg_maximum_likes: "Só é possível dar dois likes e dois dislikes"
+      msg_repeated_movie: "Não é possível repetir filme tanto para like quanto para dislike"
       

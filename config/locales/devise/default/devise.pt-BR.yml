@@ -50,6 +50,9 @@ pt-BR:
       send_instructions: "Você receberá um email com instruções para desbloquear sua conta em alguns minutos."
       send_paranoid_instructions: "Se sua conta existir, você receberá um email com instruções para desbloqueá-la em alguns minutos."
       unlocked: "Sua conta foi desbloqueada com sucesso. Por favor, faça login para continuar."
+    sessions:
+      signed_in: "Você está logado."
+      signed_out: "Você deslogou."
   errors:
     messages:
       already_confirmed: "já foi confirmado, por favor faça login"

@@ -1,0 +1,7 @@
+---
+pt-BR:
+  likes:
+    create:
+      maximum_likes: "Máximo de likes atingido"
+      repeated_movie: "Você já deu like para este filme"
+      success: "Like registrado"

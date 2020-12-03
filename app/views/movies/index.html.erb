@@ -2,6 +2,9 @@
     <div class="container-fluid">
       <h1 class="ls-title-intro ls-ico-book"><%= t('.title') %></h1>
 
+      <div class="ls-alert-danger"><%= alert %></div>
+      <div class="ls-alert-success"><%= notice %></div>
+
       <table class="ls-table ls-bg-header">
         <thead>
           <tr>
@@ -21,15 +24,25 @@
               <td><%= movie[:director] %></td>
               <td class="hidden-xs"><%= movie[:release_date] %></td>
               <td>
-                <%= link_to '', root_path, class: 'ls-ico-thumbs-up' %>
+                <%= link_to '', likes_path(episode_id: movie[:episode_id], 
+                                           user_id: current_user.id), method: :post, 
+                                           class: 'ls-ico-thumbs-up' %>
               </td>
               <td class="hidden-xs">
-                <%= link_to '', root_path, class: 'ls-ico-thumbs-up2' %>
+                <%= link_to '', dislikes_path(episode_id: movie[:episode_id], 
+                                              user_id: current_user.id), method: :post, 
+                                              class: 'ls-ico-thumbs-up2' %>
               </td>      
             </tr>
           <% end %>
         </tbody>
       </table>
-
+        <br>
+        <div class="ls-alert-warning ls-dismissable">
+          <span data-ls-module="dismiss" class="ls-dismiss">&times;</span>
+            - <%= t('.msg_maximum_likes') %> <br>
+            - <%= t('.msg_repeated_movie') %>
+        </div>
+        <br>
     </div>
 </main>
