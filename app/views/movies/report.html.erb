@@ -1,0 +1,40 @@
+<main class="ls-main ">
+    <div class="container-fluid">
+      <h1 class="ls-title-intro ls-ico-stats"><%= t('.title') %></h1>
+
+<% data = {
+  labels: @infos_likes[0],
+  datasets: [
+    {
+        label: "Likes",
+        background_color: "rgba(16, 142, 103, 0.7)",
+        data: @infos_likes[1],
+        borderWidth: 5
+    }
+  ]
+}
+options = {width: 100, height: 30 } %>
+
+
+<%= bar_chart data, options %>
+
+<br>
+
+<% data = {
+  labels: @infos_dislikes[0],
+  datasets: [
+    {
+        label: "Dislikes",
+        background_color: "rgba(223, 31, 31, 0.7)",
+        data: @infos_dislikes[1],
+        borderWidth: 5
+    }
+  ]
+}
+options = {width: 100, height: 30 } %>
+
+
+<%= line_chart data, options %>
+
+    </div>
+</main>

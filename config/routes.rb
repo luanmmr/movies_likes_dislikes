@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root to: 'movies#index'
   resources :likes, only: [:create]
   resources :dislikes, only: [:create]
+  get 'movies/report', to: 'movies#report'
 end
