@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Like, type: :model do
-
   describe 'validates#episode_id' do
     it 'verify presence' do
       like = Like.new
@@ -21,9 +20,9 @@ RSpec.describe Like, type: :model do
 
     it 'episode_id is a integer' do
       like = Like.new(episode_id: 1.5)
-  
+
       like.valid?
-  
+
       expect(like.errors[:episode_id]).to include('não é um número inteiro')
     end
   end
@@ -35,8 +34,9 @@ RSpec.describe Like, type: :model do
       other_like = Like.new(user: user, episode_id: 1)
 
       other_like.valid?
-      
-      expect(other_like.errors[:user]).to include('já presente nos likes desse filme')
+
+      expect(other_like.errors[:user]).to include('já presente nos likes '\
+                                                  'desse filme')
     end
   end
 
@@ -48,7 +48,7 @@ RSpec.describe Like, type: :model do
       like = Like.new(user: user, episode_id: 3)
 
       like.valid?
-      
+
       expect(like.errors.full_messages).to include('Máximo de likes atingido')
     end
 
@@ -59,7 +59,8 @@ RSpec.describe Like, type: :model do
 
       like.valid?
 
-      expect(like.errors.full_messages).to_not include('Máximo de likes atingido')
+      expect(like.errors.full_messages).to_not include('Máximo de likes '\
+                                                       'atingido')
     end
   end
 
@@ -72,15 +73,14 @@ RSpec.describe Like, type: :model do
 
       expect(result).to eq(true)
     end
-    
+
     it 'false' do
       user = create(:user)
       Like.create(user: user, episode_id: 1)
-  
-      result = Like.repeated_movie?(user_id: user.id, episode_id: 2)
-  
-      expect(result).to eq(nil)
-    end 
-  end
 
+      result = Like.repeated_movie?(user_id: user.id, episode_id: 2)
+
+      expect(result).to eq(nil)
+    end
+  end
 end

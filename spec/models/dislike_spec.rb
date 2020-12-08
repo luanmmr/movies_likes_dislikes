@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Dislike, type: :model do
-
   describe 'validates#episode_id' do
     it 'verify presence' do
       dislike = Dislike.new
@@ -21,9 +20,9 @@ RSpec.describe Dislike, type: :model do
 
     it 'episode_id is a integer' do
       dislike = Dislike.new(episode_id: 1.5)
-  
+
       dislike.valid?
-  
+
       expect(dislike.errors[:episode_id]).to include('não é um número inteiro')
     end
   end
@@ -35,8 +34,9 @@ RSpec.describe Dislike, type: :model do
       other_dislike = Dislike.new(user: user, episode_id: 1)
 
       other_dislike.valid?
-      
-      expect(other_dislike.errors[:user]).to include('já presente nos dislikes desse filme')
+
+      expect(other_dislike.errors[:user]).to include('já presente nos '\
+                                                     'dislikes desse filme')
     end
   end
 
@@ -48,8 +48,9 @@ RSpec.describe Dislike, type: :model do
       dislike = Dislike.new(user: user, episode_id: 3)
 
       dislike.valid?
-      
-      expect(dislike.errors.full_messages).to include('Máximo de dislikes atingido')
+
+      expect(dislike.errors.full_messages).to include('Máximo de dislikes '\
+                                                      'atingido')
     end
 
     it 'user has not yet reached maximum dislike' do
@@ -59,7 +60,8 @@ RSpec.describe Dislike, type: :model do
 
       dislike.valid?
 
-      expect(dislike.errors.full_messages).to_not include('Máximo de dislikes atingido')
+      expect(dislike.errors.full_messages).to_not include('Máximo de '\
+                                                          'dislikes atingido')
     end
   end
 
@@ -72,15 +74,14 @@ RSpec.describe Dislike, type: :model do
 
       expect(result).to eq(true)
     end
-    
+
     it 'false' do
       user = create(:user)
       Dislike.create(user: user, episode_id: 1)
-  
-      result = Dislike.repeated_movie?(user_id: user.id, episode_id: 2)
-  
-      expect(result).to eq(nil)
-    end 
-  end
 
+      result = Dislike.repeated_movie?(user_id: user.id, episode_id: 2)
+
+      expect(result).to eq(nil)
+    end
+  end
 end

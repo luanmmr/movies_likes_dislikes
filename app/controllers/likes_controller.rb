@@ -3,7 +3,7 @@ class LikesController < ApplicationController
     like = Like.new(like_params)
     if like.save
       verify_dislike
-      return redirect_back fallback_location: root_path, 
+      return redirect_back fallback_location: root_path,
                            notice: t('.success')
     end
     redirect_back fallback_location: root_path, alert: t('.maximum_likes')
@@ -26,4 +26,3 @@ class LikesController < ApplicationController
     dislike.destroy if dislike.present?
   end
 end
-

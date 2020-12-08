@@ -35,7 +35,7 @@ feature 'User dislikes' do
 
   scenario 'and if there is an like, remove' do
     user = create(:user)
-    
+
     sign_in(user, scope: :user)
     visit root_path
     within 'td#movie-like-1' do
@@ -50,7 +50,7 @@ feature 'User dislikes' do
 
   scenario 'and remove same dislike' do
     user = create(:user)
-    
+
     sign_in(user, scope: :user)
     visit root_path
     within 'td#movie-dislike-1' do

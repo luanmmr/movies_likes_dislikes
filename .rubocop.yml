@@ -36,3 +36,6 @@ Style/ClassAndModuleChildren:
 
 Style/AsciiComments:
   Enabled: false
+
+Rails/UniqueValidationWithoutIndex:
+  Enabled: false
