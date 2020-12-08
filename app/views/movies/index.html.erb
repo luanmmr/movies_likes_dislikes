@@ -44,10 +44,10 @@
               </td>
               <td class="hidden-xs" id=<%= "movie-dislike-#{indice}" %>>
                 <% if Dislike.repeated_movie?(user_id: current_user.id, episode_id: 
-                                           @movies[:results][indice][:episode_id]) %>
+                                              @movies[:results][indice][:episode_id]) %>
                 <%= link_to 'Dislike', root_path, class: 'ls-ico-checkmark' %>
                 <% else %>
-                <%= link_to 'Dislike', 
+                <%= link_to 'Dislike',
                             dislikes_path(episode_id: @movies[:results][indice][:episode_id], 
                                           user_id: current_user.id), 
                             method: :post, class: 'ls-ico-thumbs-up2' %>

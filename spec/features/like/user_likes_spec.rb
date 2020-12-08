@@ -32,4 +32,20 @@ feature 'User likes' do
     expect(current_path).to eq(root_path)
     expect(page).to have_content('Máximo de likes atingido')
   end
+
+  scenario 'and if there is an deslike, remove' do
+    user = create(:user)
+    
+    sign_in(user, scope: :user)
+    visit root_path
+    within 'td#movie-dislike-1' do
+      click_on 'Dislike'
+    end
+    within 'td#movie-like-1' do
+      click_on 'Like'
+    end
+
+    expect(page).to have_css('.ls-ico-thumbs-up2')
+  end
+
 end
