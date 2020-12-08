@@ -13,7 +13,15 @@
     }
   ]
 }
-options = {width: 100, height: 30 } %>
+        
+options = { width: 100, height: 30, scales: {
+                    xAxes: [{
+                              stacked: true
+                            }],
+                    yAxes: [{
+                              stacked: true
+                           }]
+                 } } %>
 
 
 <%= bar_chart data, options %>
@@ -31,7 +39,14 @@ options = {width: 100, height: 30 } %>
     }
   ]
 }
-options = {width: 100, height: 30 } %>
+options = { width: 100, height: 30, scales: {
+                    xAxes: [{
+                              stacked: true
+                            }],
+                    yAxes: [{
+                              stacked: true
+                           }]
+                 } } %>
 
 
 <%= line_chart data, options %>
