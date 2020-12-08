@@ -32,16 +32,26 @@
                 <%= @movies[:results][indice][:release_date] %>
               </td>
               <td id=<%= "movie-like-#{indice}" %>>
-                <%= link_to 'Like', 
-                            likes_path(episode_id: @movies[:results][indice][:episode_id], 
-                                       user_id: current_user.id), 
-                            method: :post, class: 'ls-ico-thumbs-up' %>
+                <% if Like.repeated_movie?(user_id: current_user.id, episode_id: 
+                                           @movies[:results][indice][:episode_id]) %>
+                  <%= link_to 'Like', root_path, class: 'ls-ico-checkmark' %>
+                <% else %>
+                  <%= link_to 'Like', 
+                              likes_path(episode_id: @movies[:results][indice][:episode_id], 
+                                         user_id: current_user.id), 
+                              method: :post, class: 'ls-ico-thumbs-up' %>
+                <% end %>
               </td>
               <td class="hidden-xs" id=<%= "movie-dislike-#{indice}" %>>
+                <% if Dislike.repeated_movie?(user_id: current_user.id, episode_id: 
+                                           @movies[:results][indice][:episode_id]) %>
+                <%= link_to 'Dislike', root_path, class: 'ls-ico-checkmark' %>
+                <% else %>
                 <%= link_to 'Dislike', 
                             dislikes_path(episode_id: @movies[:results][indice][:episode_id], 
                                           user_id: current_user.id), 
                             method: :post, class: 'ls-ico-thumbs-up2' %>
+                <% end %>
               </td>      
             </tr>
           <% end %>

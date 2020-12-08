@@ -1,0 +1,16 @@
+---
+pt-BR:
+  activerecord:
+    models:
+      dislike:
+        one: 'Dislike'
+        other: 'Dislikes'      
+    attributes:
+      dislike:
+        user: 'Identificação do Usuário'
+        episode_id: 'Identificação do Filme'
+    errors:
+      messages:
+        maximum_dislikes: 'Máximo de dislikes atingido'
+        user:
+          dislike_uniqueness: 'já presente nos dislikes desse filme'

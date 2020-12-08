@@ -1,0 +1,16 @@
+---
+pt-BR:
+  activerecord:
+    models:
+      like:
+        one: 'Like'
+        other: 'Likes'      
+    attributes:
+      like:
+        user: 'Identificação do Usuário'
+        episode_id: 'Identificação do Filme'
+    errors:
+      messages:
+        maximum_likes: 'Máximo de likes atingido'
+        user:
+          likes_uniqueness: 'já presente nos likes desse filme'
