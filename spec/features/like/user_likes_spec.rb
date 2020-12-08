@@ -44,8 +44,24 @@ feature 'User likes' do
     within 'td#movie-like-1' do
       click_on 'Like'
     end
-
+    
     expect(page).to have_css('.ls-ico-thumbs-up2')
+  end
+
+  scenario 'and remove same like' do
+    user = create(:user)
+    
+    sign_in(user, scope: :user)
+    visit root_path
+    within 'td#movie-like-1' do
+      click_on 'Like'
+    end
+    within 'td#movie-like-1' do
+      click_on 'Like'
+    end
+
+    expect(page).to have_no_css('.ls-ico-checkmark')
+    expect(page).to have_css('.ls-ico-thumbs-up')
   end
 
 end

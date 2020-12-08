@@ -9,6 +9,12 @@ class LikesController < ApplicationController
     redirect_back fallback_location: root_path, alert: t('.maximum_likes')
   end
 
+  def destroy
+    like = Like.find_by(user_id: params[:id], episode_id: params[:episode_id])
+    like.destroy if like.present?
+    redirect_back fallback_location: root_path, notice: t('.removed')
+  end
+
   private
 
   def like_params

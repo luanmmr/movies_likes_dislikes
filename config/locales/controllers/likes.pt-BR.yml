@@ -4,3 +4,5 @@ pt-BR:
     create:
       maximum_likes: "Máximo de likes atingido"
       success: "Like registrado"
+    destroy:
+      removed: "Like removido"

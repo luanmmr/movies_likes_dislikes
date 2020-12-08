@@ -4,3 +4,5 @@ pt-BR:
     create:
       maximum_dislikes: "Máximo de dislikes atingido"
       success: "Dislike registrado"
+    destroy:
+      removed: "Dislike removido"

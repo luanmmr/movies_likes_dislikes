@@ -47,4 +47,20 @@ feature 'User dislikes' do
 
     expect(page).to have_css('.ls-ico-thumbs-up')
   end
+
+  scenario 'and remove same dislike' do
+    user = create(:user)
+    
+    sign_in(user, scope: :user)
+    visit root_path
+    within 'td#movie-dislike-1' do
+      click_on 'Dislike'
+    end
+    within 'td#movie-dislike-1' do
+      click_on 'Dislike'
+    end
+
+    expect(page).to have_no_css('.ls-ico-checkmark')
+    expect(page).to have_css('.ls-ico-thumbs-up2')
+  end
 end
