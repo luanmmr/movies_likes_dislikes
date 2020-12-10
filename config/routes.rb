@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :dislikes, only: %i[create destroy]
   get 'movies/report', to: 'movies#report'
   get 'movies/charts', to: 'movies#chart'
+  get 'movies/extra', to: 'movies#extra'
 end

@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
-  before_action :all_movies, only: %i[index chart]
-  before_action :group_likes_dislikes, only: %i[chart]
+  before_action :all_movies, only: %i[index chart extra]
+  before_action :group_likes_dislikes, only: %i[chart extra]
 
   def index; end
 
@@ -8,6 +8,11 @@ class MoviesController < ApplicationController
     mount_all_array
     mount_likes_array
     mount_dislikes_array
+  end
+
+  def extra
+    mount_all_array
+    most_voted_hash
   end
 
   private
@@ -71,5 +76,16 @@ class MoviesController < ApplicationController
       @unordened_all[0].slice!(index)
       @unordened_all[1].slice!(index)
     end
+  end
+
+  def most_voted_hash
+      titles = [@ordened_all_chart[0][0], @ordened_all_chart[0][1]]
+      @most_voted = Hash.new
+      0.upto(1) do |n|
+        @movies[:results].each do |m|
+          @most_voted[m[:episode_id]] = @ordened_all_chart[0][n] \
+          if m[:title] == @ordened_all_chart[0][n]
+        end
+      end  
   end
 end

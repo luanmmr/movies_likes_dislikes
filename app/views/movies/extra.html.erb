@@ -1,0 +1,64 @@
+<main class="ls-main ">
+    <div class="container-fluid">
+      <h1 class="ls-title-intro ls-ico-star3"><%= t('.title') %></h1>
+        Dois primeiros filmes mais votados <br><br><br>
+        <h3>APIs</h3> <br>
+        <% @most_voted.each do |id, name| %>
+            <p><h5><%= name %></h5> 
+            <a href=<%= "https://swapi.dev/api/films/#{id}" %> target="_blank">
+              <%= "https://swapi.dev/api/films/#{id}" %>
+            </a>
+            </p>
+        <% end %>
+
+        <br><br>
+
+    <% @most_voted.each do |id, name| %>
+        <div class="ls-collapse-group">
+  <div data-ls-module="collapse" data-target="#accordeon0" class="ls-collapse ">
+    <a href="#" class="ls-collapse-header">
+      <h3 class="ls-collapse-title"><%= name %></h3>
+    </a>
+    <div class="ls-collapse-body" id="accordeon0">
+      <p>
+        <% @movies[:results].each do |m| %>
+            <% if m[:episode_id] == id %>
+              <p>title: <%= m[:title] %></p>
+              <p>episode_id: <%= m[:episode_id] %></p>
+              <p>opening_crawl: <%= m[:opening_crawl] %></p>
+              <p>director: <%= m[:director] %></p>
+              <p>producer: <%= m[:producer] %></p>
+              <p>release_date: <%= m[:release_date] %></p>
+              
+              <p>characters:
+              <% m[:characters].each do |c| %>
+                <p><%= c %></p>
+              <% end %></p>
+              <p>planets:
+              <% m[:planets].each do |p| %>
+                <p><%= p %></p>
+              <% end %></p>
+              <p>starships:
+              <% m[:starships].each do |s| %>
+                <p><%= s %></p>
+              <% end %></p>
+              <p>vehicles:
+              <% m[:vehicles].each do |v| %>
+                <p><%= v %></p>
+              <% end %></p>
+              <p>species:
+              <% m[:species].each do |sp| %>
+                <p><%= sp %></p>
+              <% end %></p>
+              <p>created: <%= m[:created] %></p>
+              <p>edited: <%= m[:edited] %></p>
+              <p>url: <%= m[:url] %></p>
+            <% end %>
+        <% end %>
+      </p>
+    </div>
+  </div>
+<% end %>
+
+    </div>
+</main>
