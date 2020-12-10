@@ -1,15 +1,13 @@
 class MoviesController < ApplicationController
-  before_action :all_movies
+  before_action :all_movies, only: %i[index chart]
+  before_action :group_likes_dislikes, only: %i[chart]
 
   def index; end
 
-  def report
-    @likes_group = Like.group(:episode_id).count
-    @infos_likes = Array.new(2) { Array.new(@likes_group.length) }
-    report_likes(@likes_group, @infos_likes)
-    @dislikes_group = Dislike.group(:episode_id).count
-    @infos_dislikes = Array.new(2) { Array.new(@dislikes_group.length) }
-    report_dislikes(@dislikes_group, @infos_dislikes)
+  def chart
+    mount_all_array
+    mount_likes_array
+    mount_dislikes_array
   end
 
   private
@@ -19,25 +17,59 @@ class MoviesController < ApplicationController
     @movies = JSON.parse(resp.body, symbolize_names: true)
   end
 
-  def report_likes(likes_group, infos_likes)
+  def group_likes_dislikes
+    @likes_group = Like.group(:episode_id).count
+    @dislikes_group = Dislike.group(:episode_id).count
+    @all_group = @likes_group.merge(@dislikes_group)
+  end
+
+  def mount_likes_array
+    @likes_chart = Array.new(2) { Array.new(@likes_group.length) }
     x = 0
-    likes_group.each do |movie, likes|
+    @likes_group.each do |movie, likes|
       @movies[:results].each do |m|
-        infos_likes[0][x] = m[:title] if m[:episode_id] == movie
+        @likes_chart[0][x] = m[:title] if m[:episode_id] == movie
       end
-      infos_likes[1][x] = likes
+      @likes_chart[1][x] = likes
       x += 1
     end
   end
 
-  def report_dislikes(dislikes_group, infos_dislikes)
+  def mount_dislikes_array
+    @dislikes_chart = Array.new(2) { Array.new(@dislikes_group.length) }
     x = 0
-    dislikes_group.each do |movie, likes|
+    @dislikes_group.each do |movie, likes|
       @movies[:results].each do |m|
-        infos_dislikes[0][x] = m[:title] if m[:episode_id] == movie
+        @dislikes_chart[0][x] = m[:title] if m[:episode_id] == movie
       end
-      infos_dislikes[1][x] = likes
+      @dislikes_chart[1][x] = likes
       x += 1
+    end
+  end
+
+  def mount_all_array
+    @unordened_all = Array.new(2) { Array.new(@all_group.length) }
+    x = 0
+    @all_group.each_key do |episode|
+      @movies[:results].each do |m|
+        @unordened_all[0][x] = m[:title] if m[:episode_id] == episode
+      end
+      @unordened_all[1][x] = Like.where(episode_id: episode).count +
+                             Dislike.where(episode_id: episode).count
+      x += 1
+    end
+    order_all_array
+  end
+
+  def order_all_array
+    @ordened_all_chart = Array.new(2) { Array.new(@all_group.length) }
+    0.upto(@unordened_all[0].length - 1) do |n|
+      max_value = @unordened_all[1].max
+      @ordened_all_chart[1][n] = max_value
+      index = @unordened_all[1].find_index(max_value)
+      @ordened_all_chart[0][n] = @unordened_all[0][index]
+      @unordened_all[0].slice!(index)
+      @unordened_all[1].slice!(index)
     end
   end
 end

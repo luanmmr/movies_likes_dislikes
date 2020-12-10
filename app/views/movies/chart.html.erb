@@ -1,0 +1,115 @@
+<main class="ls-main ">
+    <div class="container-fluid">
+      <h1 class="ls-title-intro ls-ico-stats"><%= t('.title') %></h1>
+
+<div style="display: inline; align-items: center; justify-content: center;">
+<div class="ls-box ls-board-box" style="width: 950px; height: 100%; margin-right: 20px;">
+  <header class="ls-info-header">
+    <h2 class="ls-title-4">Likes/Dislikes</h2>
+    <p class="ls-float-right ls-float-none-xs ls-small-info">
+      Data: <strong><%= Time.now.strftime("%d/%m/%Y %k:%M")%></strong>
+    </p>
+  </header>
+  <p>
+
+<% data = {
+  labels: @ordened_all_chart[0],
+  datasets: [
+    {
+        label: "Likes/Dislikes",
+        background_color: "rgba(238, 238, 238, 1)",
+        data: @ordened_all_chart[1],
+        borderWidth: 1
+    }
+  ]
+}
+        
+options = { width: 950, height: 200, scales: {
+                    xAxes: [{
+                              stacked: true
+                            }],
+                    yAxes: [{
+                              stacked: true
+                           }]
+                 } } %>
+
+
+<%= horizontal_bar_chart data, options %>
+
+</p>
+</div>
+
+
+<div class="ls-box ls-board-box" style="width: 950px; height: 100%">
+  <header class="ls-info-header">
+    <h2 class="ls-title-4">Likes</h2>
+    <p class="ls-float-right ls-float-none-xs ls-small-info">
+      Data: <strong><%= Time.now.strftime("%d/%m/%Y %k:%M")%></strong>
+    </p>
+  </header>
+  <p>
+
+<% data = {
+  labels: @likes_chart[0],
+  datasets: [
+    {
+        label: "Likes",
+        background_color: "rgba(16, 142, 103, 0.7)",
+        data: @likes_chart[1],
+        borderWidth: 5
+    }
+  ]
+}
+        
+options = { width: 950, height: 200, scales: {
+                    xAxes: [{
+                              stacked: true
+                            }],
+                    yAxes: [{
+                              stacked: true
+                           }]
+                 } } %>
+
+
+<%= bar_chart data, options %>
+
+</p>
+</div>
+
+<div class="ls-box ls-board-box" style="width: 950px; height: 100%">
+  <header class="ls-info-header">
+    <h2 class="ls-title-4">Dislikes</h2>
+    <p class="ls-float-right ls-float-none-xs ls-small-info">
+      Data: <strong><%= Time.now.strftime("%d/%m/%Y %k:%M")%></strong>
+    </p>
+  </header>
+  <p>
+
+<% data = {
+  labels: @dislikes_chart[0],
+  datasets: [
+    {
+        label: "Dislikes",
+        background_color: "rgba(223, 31, 31, 0.7)",
+        data: @dislikes_chart[1],
+        borderWidth: 5
+    }
+  ]
+}
+options = { width: 950, height: 200, scales: {
+                    xAxes: [{
+                              stacked: true
+                            }],
+                    yAxes: [{
+                              stacked: true
+                           }]
+                 } } %>
+
+
+<%= line_chart data, options %>
+
+</p>
+</div>
+<div>
+    </div>
+</main>

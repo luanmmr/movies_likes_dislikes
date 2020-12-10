@@ -15,6 +15,7 @@ AllCops:
     - 'node_modules/**/*'
     - 'config/**/*'
     - 'spec/rails_helper.rb'
+    - 'app/controllers/movies_controller.rb'
     
 Style/Documentation:
  Enabled: false

@@ -5,7 +5,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <script src='./assets/0.12.3/application.js' type='text/javascript'></script>
     <link href='./assets/0.12.3/application.css' media='screen, projection, print' rel='stylesheet' type='text/css' />
-    <link rel="shortcut icon" type="image/png" href="./assets/0.12.3/favicon_yellow.png" />
+    <link rel="shortcut icon" type="image/png" href="./assets/0.12.3/favicon_red.png" />
     <link rel="icon" type="image/png" href="./assets/0.12.3/favicon.png" />
   </head>
 
@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2020-12-08T13:46:28-03:00">2020-12-08T13:46:28-03:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2020-12-09T23:53:05-03:00">2020-12-09T23:53:05-03:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -22,15 +22,15 @@
   <h2>
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
-      <span class="yellow">
-  82.0%
+      <span class="red">
+  70.49%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         12.98
+         10.67
        </span>
     </span> hits/line
     )
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>100</b> relevant lines,
-    <span class="green"><b>82</b> lines covered</span> and
-    <span class="red"><b>18</b> lines missed. </span>
-    (<span class="yellow">
-  82.0%
+    <b>122</b> relevant lines,
+    <span class="green"><b>86</b> lines covered</span> and
+    <span class="red"><b>36</b> lines missed. </span>
+    (<span class="red">
+  70.49%
 </span>
 )
   </div>
@@ -105,12 +105,12 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#889cbb5f2810d53f0724fef43f3b1c5b7ad74bea" class="src_link" title="app/controllers/movies_controller.rb">app/controllers/movies_controller.rb</a></td>
-            <td class="red strong cell--number t-file__coverage">35.71 %</td>
-            <td class="cell--number">43</td>
-            <td class="cell--number">28</td>
-            <td class="cell--number">10</td>
-            <td class="cell--number">18</td>
-            <td class="cell--number">2.21</td>
+            <td class="red strong cell--number t-file__coverage">28.00 %</td>
+            <td class="cell--number">75</td>
+            <td class="cell--number">50</td>
+            <td class="cell--number">14</td>
+            <td class="cell--number">36</td>
+            <td class="cell--number">1.32</td>
             
           </tr>
         
@@ -170,14 +170,14 @@
     <span class="group_name">Controllers</span>
     (<span class="covered_percent">
       <span class="red">
-  71.88%
+  58.14%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.91
+         2.21
        </span>
     </span> hits/line
     )
@@ -190,11 +190,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>64</b> relevant lines,
-    <span class="green"><b>46</b> lines covered</span> and
-    <span class="red"><b>18</b> lines missed. </span>
+    <b>86</b> relevant lines,
+    <span class="green"><b>50</b> lines covered</span> and
+    <span class="red"><b>36</b> lines missed. </span>
     (<span class="red">
-  71.88%
+  58.14%
 </span>
 )
   </div>
@@ -252,12 +252,12 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#889cbb5f2810d53f0724fef43f3b1c5b7ad74bea" class="src_link" title="app/controllers/movies_controller.rb">app/controllers/movies_controller.rb</a></td>
-            <td class="red strong cell--number t-file__coverage">35.71 %</td>
-            <td class="cell--number">43</td>
-            <td class="cell--number">28</td>
-            <td class="cell--number">10</td>
-            <td class="cell--number">18</td>
-            <td class="cell--number">2.21</td>
+            <td class="red strong cell--number t-file__coverage">28.00 %</td>
+            <td class="cell--number">75</td>
+            <td class="cell--number">50</td>
+            <td class="cell--number">14</td>
+            <td class="cell--number">36</td>
+            <td class="cell--number">1.32</td>
             
           </tr>
         
@@ -1427,7 +1427,7 @@
     <h3>app/controllers/movies_controller.rb</h3>
     <h4>
       <span class="red">
-  35.71%
+  28.0%
 </span>
 
       lines covered
@@ -1436,9 +1436,9 @@
     
 
     <div class="t-line-summary">
-      <b>28</b> relevant lines.
-      <span class="green"><b>10</b> lines covered</span> and
-      <span class="red"><b>18</b> lines missed.</span>
+      <b>50</b> relevant lines.
+      <span class="green"><b>14</b> lines covered</span> and
+      <span class="red"><b>36</b> lines missed.</span>
     </div>
 
     
@@ -1466,12 +1466,23 @@
 
             
 
-            <code class="ruby">  before_action :all_movies</code>
+            <code class="ruby">  before_action :all_movies, only: %i[index chart]</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="3">
+          <li class="covered" data-hits="1" data-linenumber="3">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  before_action :group_likes_dislikes, only: %i[chart]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="4">
             
             
 
@@ -1482,7 +1493,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="4">
+          <li class="covered" data-hits="1" data-linenumber="5">
             <span class="hits">1</span>
             
 
@@ -1493,7 +1504,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="5">
+          <li class="never" data-hits="" data-linenumber="6">
             
             
 
@@ -1504,24 +1515,13 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="6">
+          <li class="covered" data-hits="1" data-linenumber="7">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  def report</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="7">
-            
-            
-
-            
-
-            <code class="ruby">    @likes_group = Like.group(:episode_id).count</code>
+            <code class="ruby">  def chart</code>
           </li>
         </div>
       
@@ -1532,7 +1532,7 @@
 
             
 
-            <code class="ruby">    @infos_likes = Array.new(2) { Array.new(@likes_group.length) }</code>
+            <code class="ruby">    mount_all_array</code>
           </li>
         </div>
       
@@ -1543,7 +1543,7 @@
 
             
 
-            <code class="ruby">    report_likes(@likes_group, @infos_likes)</code>
+            <code class="ruby">    mount_likes_array</code>
           </li>
         </div>
       
@@ -1554,40 +1554,40 @@
 
             
 
-            <code class="ruby">    @dislikes_group = Dislike.group(:episode_id).count</code>
+            <code class="ruby">    mount_dislikes_array</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="11">
-            
-            
-
-            
-
-            <code class="ruby">    @infos_dislikes = Array.new(2) { Array.new(@dislikes_group.length) }</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="12">
-            
-            
-
-            
-
-            <code class="ruby">    report_dislikes(@dislikes_group, @infos_dislikes)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="13">
+          <li class="never" data-hits="" data-linenumber="11">
             
             
 
             
 
             <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="12">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="13">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  private</code>
           </li>
         </div>
       
@@ -1609,34 +1609,12 @@
 
             
 
-            <code class="ruby">  private</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="16">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="17">
-            <span class="hits">1</span>
-            
-
-            
-
             <code class="ruby">  def all_movies</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="27" data-linenumber="18">
+          <li class="covered" data-hits="27" data-linenumber="16">
             <span class="hits">27</span>
             
 
@@ -1647,7 +1625,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="27" data-linenumber="19">
+          <li class="covered" data-hits="27" data-linenumber="17">
             <span class="hits">27</span>
             
 
@@ -1658,7 +1636,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="20">
+          <li class="never" data-hits="" data-linenumber="18">
             
             
 
@@ -1669,7 +1647,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="21">
+          <li class="never" data-hits="" data-linenumber="19">
             
             
 
@@ -1680,13 +1658,35 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="22">
+          <li class="covered" data-hits="1" data-linenumber="20">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  def report_likes(likes_group, infos_likes)</code>
+            <code class="ruby">  def group_likes_dislikes</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="21">
+            
+            
+
+            
+
+            <code class="ruby">    @likes_group = Like.group(:episode_id).count</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="22">
+            
+            
+
+            
+
+            <code class="ruby">    @dislikes_group = Dislike.group(:episode_id).count</code>
           </li>
         </div>
       
@@ -1697,89 +1697,12 @@
 
             
 
-            <code class="ruby">    x = 0</code>
+            <code class="ruby">    @all_group = @likes_group.merge(@dislikes_group)</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="24">
-            
-            
-
-            
-
-            <code class="ruby">    likes_group.each do |movie, likes|</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="25">
-            
-            
-
-            
-
-            <code class="ruby">      @movies[:results].each do |m|</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="26">
-            
-            
-
-            
-
-            <code class="ruby">        infos_likes[0][x] = m[:title] if m[:episode_id] == movie</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="27">
-            
-            
-
-            
-
-            <code class="ruby">      end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="28">
-            
-            
-
-            
-
-            <code class="ruby">      infos_likes[1][x] = likes</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="29">
-            
-            
-
-            
-
-            <code class="ruby">      x += 1</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="30">
-            
-            
-
-            
-
-            <code class="ruby">    end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="31">
+          <li class="never" data-hits="" data-linenumber="24">
             
             
 
@@ -1790,7 +1713,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="32">
+          <li class="never" data-hits="" data-linenumber="25">
             
             
 
@@ -1801,18 +1724,29 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="33">
+          <li class="covered" data-hits="1" data-linenumber="26">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  def report_dislikes(dislikes_group, infos_dislikes)</code>
+            <code class="ruby">  def mount_likes_array</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="34">
+          <li class="missed" data-hits="0" data-linenumber="27">
+            
+            
+
+            
+
+            <code class="ruby">    @likes_chart = Array.new(2) { Array.new(@likes_group.length) }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="28">
             
             
 
@@ -1823,18 +1757,18 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="35">
+          <li class="missed" data-hits="0" data-linenumber="29">
             
             
 
             
 
-            <code class="ruby">    dislikes_group.each do |movie, likes|</code>
+            <code class="ruby">    @likes_group.each do |movie, likes|</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="36">
+          <li class="missed" data-hits="0" data-linenumber="30">
             
             
 
@@ -1845,18 +1779,18 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="37">
+          <li class="missed" data-hits="0" data-linenumber="31">
             
             
 
             
 
-            <code class="ruby">        infos_dislikes[0][x] = m[:title] if m[:episode_id] == movie</code>
+            <code class="ruby">        @likes_chart[0][x] = m[:title] if m[:episode_id] == movie</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="38">
+          <li class="never" data-hits="" data-linenumber="32">
             
             
 
@@ -1867,18 +1801,18 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="39">
+          <li class="missed" data-hits="0" data-linenumber="33">
             
             
 
             
 
-            <code class="ruby">      infos_dislikes[1][x] = likes</code>
+            <code class="ruby">      @likes_chart[1][x] = likes</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="40">
+          <li class="missed" data-hits="0" data-linenumber="34">
             
             
 
@@ -1889,7 +1823,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="41">
+          <li class="never" data-hits="" data-linenumber="35">
             
             
 
@@ -1900,7 +1834,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="42">
+          <li class="never" data-hits="" data-linenumber="36">
             
             
 
@@ -1911,7 +1845,425 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="43">
+          <li class="never" data-hits="" data-linenumber="37">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="38">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def mount_dislikes_array</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="39">
+            
+            
+
+            
+
+            <code class="ruby">    @dislikes_chart = Array.new(2) { Array.new(@dislikes_group.length) }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="40">
+            
+            
+
+            
+
+            <code class="ruby">    x = 0</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="41">
+            
+            
+
+            
+
+            <code class="ruby">    @dislikes_group.each do |movie, likes|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="42">
+            
+            
+
+            
+
+            <code class="ruby">      @movies[:results].each do |m|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="43">
+            
+            
+
+            
+
+            <code class="ruby">        @dislikes_chart[0][x] = m[:title] if m[:episode_id] == movie</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="44">
+            
+            
+
+            
+
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="45">
+            
+            
+
+            
+
+            <code class="ruby">      @dislikes_chart[1][x] = likes</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="46">
+            
+            
+
+            
+
+            <code class="ruby">      x += 1</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="47">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="48">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="49">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="50">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def mount_all_array</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="51">
+            
+            
+
+            
+
+            <code class="ruby">    @unordened_all = Array.new(2) { Array.new(@all_group.length) }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="52">
+            
+            
+
+            
+
+            <code class="ruby">    x = 0</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="53">
+            
+            
+
+            
+
+            <code class="ruby">    @all_group.each_key do |episode|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="54">
+            
+            
+
+            
+
+            <code class="ruby">      @movies[:results].each do |m|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="55">
+            
+            
+
+            
+
+            <code class="ruby">        @unordened_all[0][x] = m[:title] if m[:episode_id] == episode</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="56">
+            
+            
+
+            
+
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="57">
+            
+            
+
+            
+
+            <code class="ruby">      @unordened_all[1][x] = Like.where(episode_id: episode).count +</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="58">
+            
+            
+
+            
+
+            <code class="ruby">                             Dislike.where(episode_id: episode).count</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="59">
+            
+            
+
+            
+
+            <code class="ruby">      x += 1</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="60">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="61">
+            
+            
+
+            
+
+            <code class="ruby">    order_all_array</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="62">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="63">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="64">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def order_all_array</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="65">
+            
+            
+
+            
+
+            <code class="ruby">    @ordened_all_chart = Array.new(2) { Array.new(@all_group.length) }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="66">
+            
+            
+
+            
+
+            <code class="ruby">    0.upto(@unordened_all[0].length - 1) do |n|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="67">
+            
+            
+
+            
+
+            <code class="ruby">      max_value = @unordened_all[1].max</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="68">
+            
+            
+
+            
+
+            <code class="ruby">      @ordened_all_chart[1][n] = max_value</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="69">
+            
+            
+
+            
+
+            <code class="ruby">      index = @unordened_all[1].find_index(max_value)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="70">
+            
+            
+
+            
+
+            <code class="ruby">      @ordened_all_chart[0][n] = @unordened_all[0][index]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="71">
+            
+            
+
+            
+
+            <code class="ruby">      @unordened_all[0].slice!(index)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="72">
+            
+            
+
+            
+
+            <code class="ruby">      @unordened_all[1].slice!(index)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="73">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="74">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="75">
             
             
 
